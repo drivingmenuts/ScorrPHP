@@ -1,0 +1,25 @@
+drop table if exists 'players';
+create table if not exists 'players'
+(
+    id         int primary key auto_increment,
+    name       text,
+    total      integer,
+    meta       text,
+    created_at datetime,
+    updated_at datetime,
+    deleted_at datetime
+);
+drop index if exists 'players_by_name';
+create index if not exists 'players-by_name' on 'players'
+    (name, id);
+
+drop table if exists 'rawscores';
+create table if not exists 'rawscores'
+(
+    id         integer primary key auto_increment,
+    player_id  integer,
+    score      integer,
+    meta       text,
+    created_at timestamp,
+    collected  boolean
+);
