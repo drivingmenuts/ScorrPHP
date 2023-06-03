@@ -131,19 +131,19 @@ $player_rank ?: [];
     });
 
     searchBox.addEventListener('keyup', () => {
-        var _matchItem = -1;
         var _targetString = searchBox.value;
-        var _tL = _targetString.length;
-        var _hit = -1;
-        console.log(`Searching for "${_targetString} ..."`);
-        for (var i = 0; i < playerNamesLength; i++) {
-            var _cT = playerNames[i].innerText.substring(0, _tL);
-            if (_cT == _targetString) {
-                _hit = i;
+        var _targetLength = _targetString.length;
+        var _hitIndex = -1;
+
+        for (var i = 0, l = playerNames.length; i < l; i++) {
+            var _compareTarget = playerNames[i].innerText.substring(0, _targetLength);
+            if (_compareTarget == _targetString) {
+                _hitIndex = i;
                 break;
             }
         }
-        playerNames[_hit].scrollIntoView(true);
+
+        playerNames[_hitIndex].scrollIntoView(true);
     });
 </script>
 </body>
