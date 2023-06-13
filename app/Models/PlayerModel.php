@@ -42,4 +42,15 @@ class PlayerModel extends Model
     protected $afterFind = [];
     protected $beforeDelete = [];
     protected $afterDelete = [];
+
+    public function blankPlayer($id)
+    {
+        $item = [
+            'name' => '- GDPR -',
+            'total' => '',
+            'meta' => ''
+        ];
+        $this->update($id, $item);
+        $this->delete($id, false);
+    }
 }

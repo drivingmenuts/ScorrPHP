@@ -63,9 +63,11 @@ class Gdpr extends BaseCommand
         timer('gdpr');
 
         $player_id = $params[0];
+
         CLI::write("Removing {$player_id} from Players.");
         $player = new PlayerModel();
-        $player->delete($player_id);
+        $player->blankPlayer($player_id);
+
         CLI::write("Removing {$player_id} from RawScores.");
         $scores = new ScoreModel();
         $scores->where('player_id', $player_id)->delete();
