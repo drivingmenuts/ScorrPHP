@@ -28,7 +28,7 @@ $player_rank ?: [];
 
 <body div class="container-fluid">
 <div class="row">
-    <div class="col-md-6" style="max-height: 100vh; overflow: scroll">
+    <div class="col-md-6" style="max-height: 90vh; overflow: scroll">
         <div>
             <div class="row" class="sticky-top">
                 <div class="col-6">
@@ -109,11 +109,14 @@ $player_rank ?: [];
             </div>
         </div>
         <div class="row" style="max-height: 50vh; overflow: scroll;">
-            <div class="col" style="height: 50vh;">
+            <div class="col" style="height: 38vh;">
                 <h5>Feed</h5>
                 <p>No info found.</p>
             </div>
         </div>
+    </div>
+    <div class="row text-center">
+        <small>Version: <?= getenv('SCORR_VERSION') ?> <?= getenv('CI_ENVIRONMENT' ) ?><br>Made with love and frustration on a Mac</small>
     </div>
 </div>
 
